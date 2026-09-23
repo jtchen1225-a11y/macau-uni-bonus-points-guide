@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澳門高校升學加分與優惠全景指南 (2026/2027+) | 應屆畢業生與家長必備手冊</title>
+  <meta name="description" content="全澳首創！澳門所有大學（公立與私立）加分計劃、四校聯考優惠政策、豁免筆試標準與校長推薦保送制度詳細對比與互動試算器。專為澳門應屆高中畢業生與家長打造。">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+              950: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col">
+
+  <!-- Print-Only Header -->
+  <div class="hidden print-only-header">
+    <h1 class="text-2xl font-black text-slate-900">澳門高等院校升學加分與優惠全景指南</h1>
+    <p class="text-sm text-slate-600 mt-1">應屆高三畢業生與家長升學必備參考 · 官方招生規則核實整理</p>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header class="sticky top-0 z-40 glass-header border-b border-slate-200/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 to-indigo-600 text-white flex items-center justify-center font-black shadow-md shadow-blue-500/20">
+          <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <div class="font-black text-base sm:text-lg text-slate-900 leading-tight flex items-center gap-1.5">
+            <span>澳門高校加分與優惠指南</span>
+            <span class="px-2 py-0.5 text-[10px] font-bold bg-amber-100 text-amber-800 rounded-full border border-amber-200">2026/27+</span>
+          </div>
+          <p class="text-[11px] text-slate-500 hidden sm:block">專為澳門應屆畢業生與家長打造的升學決策地圖</p>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-1 text-sm font-semibold text-slate-600">
+        <a href="#calculator" class="px-3 py-1.5 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition-colors flex items-center gap-1">
+          <i data-lucide="sparkles" class="w-4 h-4 text-blue-600"></i> 加分試算器
+        </a>
+        <a href="#matrix" class="px-3 py-1.5 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition-colors flex items-center gap-1">
+          <i data-lucide="table" class="w-4 h-4 text-emerald-600"></i> 對比矩陣
+        </a>
+        <a href="#schools" class="px-3 py-1.5 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition-colors flex items-center gap-1">
+          <i data-lucide="building-2" class="w-4 h-4 text-purple-600"></i> 各校規章
+        </a>
+        <a href="#faq" class="px-3 py-1.5 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition-colors flex items-center gap-1">
+          <i data-lucide="help-circle" class="w-4 h-4 text-amber-600"></i> 8大防踩坑
+        </a>
+        <a href="#timeline" class="px-3 py-1.5 rounded-lg hover:text-blue-600 hover:bg-slate-100 transition-colors flex items-center gap-1">
+          <i data-lucide="calendar" class="w-4 h-4 text-rose-600"></i> 關鍵日程
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button id="print-btn" type="button" class="px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-white text-xs font-bold text-slate-700 flex items-center gap-1.5 shadow-xs transition-colors cursor-pointer" title="列印或另存為PDF">
+          <i data-lucide="printer" class="w-4 h-4 text-slate-500"></i>
+          <span class="hidden sm:inline">列印手冊</span>
+        </button>
+        <a href="https://github.com/mathruffian-dot/macau-uni-bonus-points-guide" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg border border-slate-200 hover:border-slate-300 bg-white text-slate-700 shadow-xs transition-colors" title="GitHub 開源專案">
+          <i data-lucide="github" class="w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-blue-900 via-indigo-950 to-slate-900 text-white py-14 sm:py-20 overflow-hidden">
+    <!-- Background glow -->
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+      <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-blue-500 blur-3xl"></div>
+      <div class="absolute top-1/2 -right-24 w-96 h-96 rounded-full bg-indigo-500 blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-xs font-semibold mb-4 backdrop-blur-md">
+          <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-amber-400"></i>
+          <span>四校聯考加分致命申報期：每年 1 月份（逾期不補）</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight sm:leading-tight mb-4">
+          手握競賽與特長，<br class="hidden sm:inline">
+          原來可換取 <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-200 to-yellow-400 font-extrabold">20 至 50 分</span> 入學加分！
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+          升學資訊零散？不知道手中的學界獎項、校際辯論、體育校隊、義工時數或雅思考試能否加分？本指南全景梳理澳門公立與私立大學官方加分體系、筆試豁免標準與保送獎學金，助您精準鎖定升學最優解！
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center sm:text-left">
+          <div class="p-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/10">
+            <div class="text-2xl font-black text-amber-400">8 所</div>
+            <div class="text-xs text-slate-300 mt-0.5">全澳高等院校全收錄</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/10">
+            <div class="text-2xl font-black text-emerald-400">+50分</div>
+            <div class="text-xs text-slate-300 mt-0.5">澳大/理工單科加分最高</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/10">
+            <div class="text-2xl font-black text-sky-400">跨類累計</div>
+            <div class="text-xs text-slate-300 mt-0.5">不同類別獎項可疊加</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/10">
+            <div class="text-2xl font-black text-purple-400">100%全免</div>
+            <div class="text-xs text-slate-300 mt-0.5">校長推薦最高四年學費免</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Interactive Calculator -->
+  <section id="calculator" class="py-12 bg-white border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">
+            <i data-lucide="calculator" class="w-4 h-4"></i> 互動匹配利器
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900">加分資格一鍵試算與高校匹配器</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">勾選您持有的獎項、專長或成績，系統即時算出在各所大學能獲得的加分、豁免考科與升學途徑！</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="preset-sci" type="button" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 transition-colors">
+            🔬 理科競賽組合
+          </button>
+          <button id="preset-arts" type="button" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-purple-50 hover:bg-purple-100 text-purple-700 transition-colors">
+            🎙️ 文科演辯組合
+          </button>
+          <button id="preset-sports" type="button" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 transition-colors">
+            🏆 體育義工組合
+          </button>
+          <button id="reset-calc-btn" type="button" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors">
+            清空重選
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left: Tag Selector -->
+        <div class="lg:col-span-7 bg-slate-50/70 rounded-2xl p-5 sm:p-6 border border-slate-200">
+          <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-200">
+            <div class="text-sm font-bold text-slate-800 flex items-center gap-2">
+              <span>點擊勾選個人專長與獲獎</span>
+              <span class="text-xs font-normal text-slate-500">(可多選)</span>
+            </div>
+            <div class="text-xs font-bold text-blue-700 bg-blue-100/70 px-2.5 py-1 rounded-full">
+              已選 <span id="selected-count">0</span> 項
+            </div>
+          </div>
+
+          <div id="tags-container">
+            <!-- Dynamic tags populated by JS -->
+          </div>
+        </div>
+
+        <!-- Right: Live Result Box -->
+        <div class="lg:col-span-5 bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm sticky top-20">
+          <div id="calc-results-container">
+            <!-- Dynamic calculation results populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Universal Comparison Matrix -->
+  <section id="matrix" class="py-14 bg-slate-50 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">
+            <i data-lucide="layers" class="w-4 h-4"></i> 全景橫向對比
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900">澳門所有高校加分與升學優惠全景矩陣</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">公立與私立高校橫向維度比照：分值、上限規則、豁免門檻與保送獎學金一覽</p>
+        </div>
+
+        <!-- Filter tabs & Search -->
+        <div class="flex flex-wrap items-center gap-2">
+          <div class="inline-flex rounded-xl bg-slate-200/70 p-1 border border-slate-200">
+            <button type="button" data-filter="all" class="filter-tab-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-blue-600 text-white shadow-xs transition-all">
+              全部院校 (8所)
+            </button>
+            <button type="button" data-filter="public" class="filter-tab-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-white text-slate-700 hover:text-blue-600 transition-all">
+              公立名校 (澳大/理工/旅大)
+            </button>
+            <button type="button" data-filter="private" class="filter-tab-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-white text-slate-700 hover:text-blue-600 transition-all">
+              私立特色 (科大/城大/鏡湖/聖大等)
+            </button>
+          </div>
+
+          <div class="relative">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
+            <input 
+              id="global-search" 
+              type="text" 
+              placeholder="搜尋大學、獎項、專業..." 
+              class="pl-9 pr-3.5 py-1.5 text-xs rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 w-48 sm:w-56"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison Table Card -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse min-w-[850px]">
+            <thead>
+              <tr class="bg-slate-100/80 border-b border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-wider">
+                <th class="p-4 w-44">高等院校</th>
+                <th class="p-4 w-52">加分計劃及分值</th>
+                <th class="p-4 w-56">筆試豁免標準</th>
+                <th class="p-4 w-60">校長推薦 / 保送獎學金</th>
+                <th class="p-4 w-44">申報期與聯繫</th>
+              </tr>
+            </thead>
+            <tbody id="matrix-table-body" class="divide-y divide-slate-100">
+              <!-- Populated by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: University Profile Cards -->
+  <section id="schools" class="py-14 bg-white border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <div class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-600 uppercase tracking-wider mb-1">
+          <i data-lucide="compass" class="w-4 h-4"></i> 各校深研
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900">澳門高等院校專題解讀與特色簡章</h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">點擊個別院校可查看加分類別細節、免試科目及註冊處官方通道</p>
+      </div>
+
+      <div id="uni-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Populated by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: FAQs for Parents & Students -->
+  <section id="faq" class="py-14 bg-slate-50 border-b border-slate-200/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 uppercase tracking-wider mb-1">
+          <i data-lucide="shield-check" class="w-4 h-4"></i> 升學必讀
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900">家長與應屆畢業生 8 大防踩坑 Q&A</h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">破除「四校聯考統招誤區」、「1月申報致命時效」、「證明備驗」等高頻雷區</p>
+      </div>
+
+      <div id="faq-container" class="space-y-3">
+        <!-- Populated by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Timeline & Milestone Checklist -->
+  <section id="timeline" class="py-14 bg-white border-b border-slate-200/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 text-center max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-1.5 text-xs font-bold text-rose-600 uppercase tracking-wider mb-1">
+          <i data-lucide="check-circle" class="w-4 h-4"></i> 升學日程
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900">升學關鍵日程與待辦檢核清單</h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">從 9 月中學保送推薦到 5 月放榜，每一步關鍵節點與家長必備待辦事項（支持互動打勾）</p>
+      </div>
+
+      <div id="timeline-container">
+        <!-- Populated by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- University Detail Modal -->
+  <div id="uni-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative border border-slate-200">
+      <button id="close-modal-btn" type="button" class="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer z-10">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="modal-content">
+        <!-- Injected via openUniModal() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800/80">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold">
+            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="font-bold text-slate-200 text-sm">澳門高等院校升學加分與優惠全景指南</div>
+            <div class="text-[11px] text-slate-500">本指南依據澳門各大學官方註冊處及教育及青年發展局公開章程客觀梳理</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4 text-xs font-medium">
+          <a href="#calculator" class="hover:text-white transition-colors">加分試算器</a>
+          <a href="#matrix" class="hover:text-white transition-colors">全景矩陣</a>
+          <a href="#schools" class="hover:text-white transition-colors">院校解讀</a>
+          <a href="#faq" class="hover:text-white transition-colors">家長問答</a>
+          <a href="#timeline" class="hover:text-white transition-colors">日程清單</a>
+          <a href="https://github.com/mathruffian-dot/macau-uni-bonus-points-guide" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1">
+            <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub 原始碼
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
+        <p>© 2026 澳門高校升學公益指引專案 · 開源且自由傳播 · 供澳門應屆高三學生與家長交流參考</p>
+        <p class="text-slate-400">提醒：各校每年招生具體細則以當年度大學註冊處官網公佈之最新簡章為準。</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data/uni-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
