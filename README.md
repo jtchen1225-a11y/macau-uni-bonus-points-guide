@@ -1,7 +1,7 @@
 # 🎓 澳門高等院校升學加分與優惠全景指南 (2026/2027+)
 
 > **專為澳門應屆高中畢業生與家長打造 · 破除迷思 · 試算加分 · 掌握時效**  
-> 🌐 在線訪問地址：[https://jtchen1225-a11y.github.io/macau-uni-bonus-points-guide/](https://jtchen1225-a11y.github.io/macau-uni-bonus-points-guide/)
+> 🌐 在線訪問地址：[https://daydaystudy.top](https://daydaystudy.top)（GitHub Pages 備用地址：[https://jtchen1225-a11y.github.io/macau-uni-bonus-points-guide/](https://jtchen1225-a11y.github.io/macau-uni-bonus-points-guide/)）
 
 ---
 
